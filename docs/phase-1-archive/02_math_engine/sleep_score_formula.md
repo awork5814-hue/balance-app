@@ -25,3 +25,27 @@ If time in bed is significantly higher than time asleep
 (indicating restlessness or fragmentation):
 
 - Condition:
+time_in_bed_hours − actual_sleep_hours ≥ 1.5 hours
+
+
+- Penalty:
+score = score − 10
+
+
+
+
+---
+
+## Step 3 — Guardrails
+- Maximum score capped at **100**
+- Minimum score floored at **0**
+- Oversleeping does not grant bonus points
+
+---
+
+## Design Rationale
+Sleep is treated as a biological recovery anchor.
+The system rewards adequacy, not excess.
+
+
+
