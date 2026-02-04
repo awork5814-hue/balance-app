@@ -1,13 +1,81 @@
 {
-  "session_id": "UUID",
-  "user_id": "UUID",
-  "type": "Guided Breathing | Reflection | Movement",
-  "timestamp_start": "iso_8601",
-  "timestamp_end": "iso_8601",
-  "results": {
-    "heart_rate_pre": "int_or_null",
-    "heart_rate_post": "encrypted_int_or_null",
-    "resonance_score": "int_or_null"
-  }
-}
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PracticeSession",
+  "type": "object",
+  "required": [
+    "session_id",
+    "user_id",
+    "session_type",
+    "timestamp",
+    "duration_seconds"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique identifier for the practice session"
+    },
 
+    "user_id": {
+      "type": "string",
+      "description": "UUID referencing the user"
+    },
+
+    "session_type": {
+      "type": "string",
+      "enum": ["box_breathing"],
+      "description": "Intervention type (Alpha locked)"
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 session start time"
+    },
+
+    "duration_seconds": {
+      "type": "integer",
+      "minimum": 60,
+      "maximum": 120,
+      "description": "Total session duration (Two-Minute Rule)"
+    },
+
+    "results": {
+      "type": "object",
+      "properties": {
+        "heart_rate_pre": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 220,
+          "description": "Average BPM during 60s before session start"
+        },
+
+        "heart_rate_peak": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 220,
+          "description": "Optional peak BPM during session"
+        },
+
+        "heart_rate_post": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 220,
+          "description": "Average BPM during 60s after session end"
+        },
+
+        "resonance_delta": {
+          "type": "integer",
+          "description": "Calculated delta between pre and post heart rate"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "sync_state": {
+      "type": "string",
+      "enum": ["pending", "final"],
+      "description": "Indicates whether biometric data is finalized"
+    }
+  },
+  "additionalProperties": false
+}
