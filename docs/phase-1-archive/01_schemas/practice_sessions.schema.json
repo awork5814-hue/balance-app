@@ -1,0 +1,12 @@
+{
+  "session_id": "UUID",
+  "user_id": "UUID",
+  "type": "Guided Breathing | Reflection | Movement",
+  "timestamp_start": "iso_8601",
+  "timestamp_end": "iso_8601",
+  "results": {
+    "heart_rate_pre": "int_or_null",
+    "heart_rate_post": "encrypted_int_or_null",
+    "resonance_score": "int_or_null"
+  }
+}
