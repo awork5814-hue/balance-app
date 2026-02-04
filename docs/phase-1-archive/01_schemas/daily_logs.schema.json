@@ -1,0 +1,17 @@
+{
+  "log_id": "UUID",
+  "user_id": "UUID",
+  "date": "YYYY-MM-DD",
+  "metrics": {
+    "mood": "encrypted_int_0_100",
+    "energy": "encrypted_int_0_100",
+    "steps": "int_or_null",
+    "sleep_quality": "int_or_null"
+  },
+  "calculated_scores": {
+    "mental_score": "int_or_null",
+    "physical_score": "int_or_null",
+    "holistic_score": "int_or_null"
+  },
+  "sync_state": "pending | partial | final"
+}
