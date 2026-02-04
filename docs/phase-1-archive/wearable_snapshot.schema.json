@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WearableSnapshot",
+  "type": "object",
+  "properties": {
+    "snapshot_id": { "type": "string" },
+    "user_id": { "type": "string" },
+    "steps": { "type": "integer", "minimum": 0 },
+    "resting_heart_rate": { "type": "integer" },
+    "sleep_duration_minutes": { "type": "integer" },
+    "synced_at": { "type": "string", "format": "date-time" }
+  },
+  "required": ["snapshot_id", "user_id", "synced_at"]
+}
