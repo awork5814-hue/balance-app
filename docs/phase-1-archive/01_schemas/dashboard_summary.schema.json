@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DashboardSummary",
+  "type": "object",
+  "properties": {
+    "date_range": { "type": "string" },
+    "mental_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "physical_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "holistic_score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "trend": {
+      "type": "string",
+      "enum": ["up", "down", "stable"]
+    }
+  },
+  "required": [
+    "date_range",
+    "mental_score",
+    "physical_score",
+    "holistic_score"
+  ]
+}
