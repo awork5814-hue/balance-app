@@ -1,6 +1,10 @@
-# Documentation
+# balance-app
 
-This folder contains all product, design, and engineering documentation
-for the Balance app.
+Balance is a privacy-first mental + physical health app designed
+for high-performing users.
 
-Phase 1 (Alpha) documentation lives in `/docs/phase-1-archive`.
+## Documentation
+- Phase 1 (Alpha): `/docs/phase-1-archive`
+
+## Status
+Phase 1 features are frozen.
