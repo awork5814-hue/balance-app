@@ -1,0 +1,9 @@
+{
+  "user_id": "UUID",
+  "profile": {
+    "username": "string",
+    "wearable_type": "Apple_Health | Google_Health | Manual"
+  },
+  "daily_step_goal": 10000,
+  "sleep_target_hours": 8
+}
